@@ -1,26 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+
     <link rel="stylesheet" href="./assets/styles/styles.css">
     <link rel="shortcut icon" href="./assets/images/favicon-32x32.png" type="image/x-icon">
 
     <title>Typing Speed Test</title>
 </head>
+
 <body>
     <header class="site-header">
-        SITE HEADER
+        <div class="site-header-left">
+            <picture>
+                <source srcset="./assets/images/logo-large.svg" media="(width >= 768px)" />
+                <img src="./assets/images/logo-small.svg" alt="Typing speed test logo" />
+            </picture>
+        </div>
+        <div class="site-header-right">
+            <div class="content-wrapper">
+                <img src="./assets/images/icon-personal-best.svg" alt="Trophy">
+                <p class="best-score-mobile text-preset-3">Best: <span class="score">92</span> <span>WPM</span></p>
+                <p class="best-score text-preset-4">Personal best: <span class="score">92</span> <span>WPM</span></p>
+            </div>
+        </div>
     </header>
     <main>
         <section class="typing-speed-test">
             TYPING SPEED TEST
         </section>
-        <section class="results">
-            RESULTS
+        <section class="results-test-complete">
+            TEST COMPLETE
+        </section>
+        <section class="results-new-personal-best">
+            HIGH SCORE SMASHED
+        </section>
+        <section class="results-first-test">
+            HIGH SCORE SMASHED
         </section>
     </main>
     <script type="module" src="./assets/script/main.js"></script>
 </body>
+
 </html>

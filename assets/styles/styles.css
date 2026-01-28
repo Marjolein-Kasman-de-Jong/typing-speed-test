@@ -38,6 +38,7 @@ html {
 }
 
 body {
+    position: relative;
     min-height: 100vh;
 }
 
@@ -92,91 +93,101 @@ body {
     font-family: var(--font-sora);
 }
 
-.text-preset-1 {
-  font-family: var(--font-sora);
-  font-size: 2.5rem;
-  font-weight: 700;
-  line-height: 1.36;
-  letter-spacing: 0.4px;
-}
-
-@media (max-width: 767px) {
-  .text-preset-1 {
-    font-size: 1.5rem;
-    line-height: 1.2;
-    letter-spacing: 0.32px;
-  }
-}
-
-.text-preset-1-regular {
-  font-family: var(--font-sora);
-  font-size: 2.5rem;      
-  font-weight: 400;
-  line-height: 1.36;
-  letter-spacing: 0.4px;
-}
-
-@media (max-width: 767px) {
-  .text-preset-1-regular {
-    font-size: 2rem;
-    line-height: 1.36;
-    letter-spacing: 0.4px;
-  }
-}
-
-.text-preset-2 {
-  font-family: var(--font-sora);
-  font-size: 1.5rem;
-  font-weight: 700;
-  line-height: 1;
-  letter-spacing: 0;
-}
-
 .text-preset-3 {
-  font-family: var(--font-sora);
-  font-size: 1.25rem;
-  font-weight: 400;
-  line-height: 1.2;
-  letter-spacing: -0.4px;
-}
-
-@media (max-width: 767px) {
-  .text-preset-3 {
-    font-size: 1.125rem;
-    letter-spacing: -0.48px;
-  }
-}
-
-.text-preset-3-semibold {
-  font-family: var(--font-sora);
-  font-size: 1.25rem;
-  font-weight: 600;
-  line-height: 1.2;
-  letter-spacing: -0.3px;
+    font-family: var(--font-sora);
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%;
+    letter-spacing: -0.03rem;
 }
 
 .text-preset-4 {
-  font-family: var(--font-sora);
-  font-size: 1.125rem;
-  font-weight: 400;
-  line-height: 1.2;
-  letter-spacing: -0.6px;
-}
+    @media screen and (min-width: 768px) {
+        font-family: var(--font-sora);
+        font-size: 1.125rem;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 120%;
+        letter-spacing: -0.0375rem;
 
-.text-preset-5 {
-  font-family: var(--font-sora);
-  font-size: 1rem;
-  font-weight: 400;
-  line-height: 1.2;
-  letter-spacing: -0.48px;
-}
-
-.text-preset-6 {
-  font-family: var(--font-sora);
-  font-size: 0.75rem;
-  font-weight: 400;
-  line-height: 1.2;
-  letter-spacing: 0;
+        @media screen and (min-width: 1200px) {
+            /* None */
+        }
+    }
 }
 
 /* Main styles */
+
+body {
+    padding: var(--spacing-200) var(--spacing-200) var(--spacing-400);
+
+    background-color: var(--neutral-900);
+
+    @media screen and (min-width: 768px) {
+        padding: var(--spacing-400) var(--spacing-400) var(--spacing-500);
+
+        @media screen and (min-width: 1200px) {
+            padding: var(--spacing-400) var(--spacing-1400);
+        }
+    }
+}
+
+/* Site header styles */
+
+.site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 48px;
+    padding: var(--spacing-200) var(--spacing-200) 0;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @media screen and (min-width: 768px) {
+        height: 71px;
+        padding: var(--spacing-400) var(--spacing-400) 0;
+
+        @media screen and (min-width: 1200px) {
+            padding: var(--spacing-400) var(--spacing-1400) 0;
+        }
+    }
+
+    .site-header-right {
+        .content-wrapper {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-125);
+
+            .best-score-mobile {
+                color: var(--neutral-400);
+
+                @media screen and (min-width: 768px) {
+                    display: none;
+                }
+
+                span {
+                    color: var(--neutral-0);
+                }
+            }
+
+            .best-score {
+                display: none;
+
+                color: var(--neutral-400);
+
+                @media screen and (min-width: 768px) {
+                    display: block;
+                }
+
+                span {
+                    color: var(--neutral-0);
+                }
+            }
+        }
+    }
+}
