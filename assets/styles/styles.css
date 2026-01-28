@@ -147,7 +147,7 @@ main {
     }
 }
 
-/* Site header styles */
+/* Site header */
 
 .site-header {
     position: fixed;
@@ -206,7 +206,7 @@ main {
     }
 }
 
-/* Section styles */
+/* Screen */
 
 section {
     color: white; /*temp*/
@@ -223,10 +223,10 @@ section {
     }
 }
 
-/* Section Typing speed test styles */
+/* Screen Typing speed test */
 
-/* Section Results - Test complete styles */
+/* Screen Results - Test complete */
 
-/* Section Results - New personal best styles */
+/* Screen Results - New personal best */
 
-/* Section Results - First test styles */
+/* Screen Results - First test */

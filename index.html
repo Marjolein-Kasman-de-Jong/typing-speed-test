@@ -29,7 +29,61 @@
     </header>
     <main>
         <section class="screen typing-speed-test active">
-            TYPING SPEED TEST
+            <div class="game-info">
+                <div class="game-info-score">
+                    <p class="wpm">
+                        WPM: <span>40</span>
+                    </p>
+                    <p class="accuracy">
+                        Accuracy: <span>94</span><span>%</span>
+                    </p>
+                    <p class="time">
+                        Time: <span>0:46</span>
+                    </p>
+                </div>
+                <div class="game-info-settings">
+                    <fieldset class="difficulty">
+                        <legend>Difficulty:</legend>
+                        <details>
+                            <summary>
+                                <span>Hard</span>
+                            </summary>
+                            <div class="difficulty-options-wrapper">
+                                <label class="difficulty-option">
+                                    <input type="radio" name="difficulty" value="easy">
+                                    <span>Easy</span>
+                                </label>
+                                <label class="difficulty-option">
+                                    <input type="radio" name="difficulty" value="medium">
+                                    <span>Medium</span>
+                                </label>
+                                <label class="difficulty-option">
+                                    <input type="radio" name="difficulty" value="hard">
+                                    <span>Hard</span>
+                                </label>
+                            </div>
+                        </details>
+                    </fieldset>
+                    <fieldset class="mode">
+                        <legend>Mode:</legend>
+                        <details>
+                            <summary>
+                                <span>Timed(60s)</span>
+                            </summary>
+                            <div class="mode-options-wrapper">
+                                <label class="mode-option">
+                                    <input type="radio" name="mode" value="timed">
+                                    <span>Timed(60s)</span>
+                                </label>
+                                <label class="mode-option">
+                                    <input type="radio" name="mode" value="passage">
+                                    <span>Passage</span>
+                                </label>
+                            </div>
+                        </details>
+                    </fieldset>
+                </div>
+            </div>
         </section>
         <section class="screen results-test-complete">
             TEST COMPLETE
