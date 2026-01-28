@@ -133,6 +133,20 @@ body {
     }
 }
 
+main {
+    position: relative;
+
+    margin-top: 64px;
+
+    @media screen and (min-width: 768px) {
+        margin-top: 79px;
+
+        @media screen and (min-width: 1200px) {
+            margin-top: 107px;
+        }
+    }
+}
+
 /* Site header styles */
 
 .site-header {
@@ -191,3 +205,28 @@ body {
         }
     }
 }
+
+/* Section styles */
+
+section {
+    color: white; /*temp*/
+}
+
+.screen {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+
+    &.active {
+        opacity: 1;
+    }
+}
+
+/* Section Typing speed test styles */
+
+/* Section Results - Test complete styles */
+
+/* Section Results - New personal best styles */
+
+/* Section Results - First test styles */
