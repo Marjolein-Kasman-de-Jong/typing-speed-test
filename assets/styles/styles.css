@@ -225,6 +225,50 @@ section {
 
 /* Screen Typing speed test */
 
+.screen.typing-speed-test {
+    width: 100%;
+
+    .game-info {
+        display: flex;
+        flex-direction: column;
+        gap: var(--spacing-250);
+
+        @media screen and (min-width: 768px) {
+            gap: var(--spacing-200);
+
+            @media screen and (min-width: 1200px) {
+                flex-direction: row;
+                justify-content: space-between;
+                gap: unset;
+            }
+        }
+
+        .game-info-score {
+            border: 1px solid red;
+            height: 51px;
+
+            display: flex;
+
+            @media screen and (min-width: 768px) {
+                height: 24px;
+            }
+
+            &>* {
+                display: flex;
+                flex-direction: column;
+
+                @media screen and (min-width: 768px) {
+                    flex-direction: row;
+                }
+            }
+        }
+
+        .game-info-settings {
+            display: flex;
+        }
+    }
+}
+
 /* Screen Results - Test complete */
 
 /* Screen Results - New personal best */
