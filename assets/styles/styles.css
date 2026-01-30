@@ -57,6 +57,7 @@ video {
 
     --neutral-900: #121212;
     --neutral-800: #262626;
+    --neutral-700: #3A3A3A;
     --neutral-500: #717178;
     --neutral-400: #949497;
     --neutral-0: #FFFFFF;
@@ -93,6 +94,18 @@ body {
     font-family: var(--font-sora);
 }
 
+.text-preset-2 {
+    font-family: var(--font-sora);
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 100%;
+
+    @media screen and (min-width: 768px) {
+        /* none */
+    }
+}
+
 .text-preset-3 {
     font-family: var(--font-sora);
     font-size: 1rem;
@@ -100,6 +113,11 @@ body {
     font-weight: 400;
     line-height: 120%;
     letter-spacing: -0.03rem;
+
+    @media screen and (min-width: 768px) {
+        font-size: 1.25rem;
+        letter-spacing: -0.0375rem;
+    }
 }
 
 .text-preset-4 {
@@ -209,7 +227,8 @@ main {
 /* Screen */
 
 section {
-    color: white; /*temp*/
+    color: white;
+    /*temp*/
 }
 
 .screen {
@@ -239,32 +258,133 @@ section {
             @media screen and (min-width: 1200px) {
                 flex-direction: row;
                 justify-content: space-between;
-                gap: unset;
+                gap: 138px;
             }
         }
 
         .game-info-score {
-            border: 1px solid red;
             height: 51px;
 
             display: flex;
+            justify-content: space-between;
 
             @media screen and (min-width: 768px) {
+                width: 68.75%;
                 height: 24px;
+
+                justify-content: flex-start;
+
+                @media screen and (min-width: 1200px) {
+                    width: unset;
+                    flex-basis: 0;
+                    flex-grow: 484;
+                }
             }
 
             &>* {
+                position: relative;
+
+                flex-basis: 0;
                 display: flex;
                 flex-direction: column;
 
+                border-right: 1px solid var(--neutral-700);
+
                 @media screen and (min-width: 768px) {
                     flex-direction: row;
+                }
+
+                &:last-of-type {
+                    border-right: none;
+                }
+
+                p {
+                    width: 100%;
+                    max-width: 87px;
+
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    gap: var(--spacing-100);
+
+                    color: var(--neutral-400);
+
+                    @media screen and (min-width: 768px) {
+                        max-width: unset;
+
+                        flex-direction: row;
+                        gap: var(--spacing-150);
+                    }
+                }
+            }
+
+            .wpm {
+                flex-grow: 107;
+
+                @media screen and (min-width: 768px) {
+                    flex-grow: 127;
+                }
+
+                p {
+                    align-self: flex-start;
+
+                    span {
+                        color: var(--neutral-0);
+                    }
+                }
+            }
+
+            .accuracy {
+                flex-grow: 127;
+
+                @media screen and (min-width: 768px) {
+                    flex-grow: 209;
+                }
+
+                p {
+                    align-self: center;
+
+                    @media screen and (min-width: 768px) {
+                        justify-self: center;
+                        justify-content: center;
+                    }
+
+                    span {
+                        color: var(--red-500);
+                    }
+                }
+            }
+
+            .time {
+                flex-grow: 107;
+
+                @media screen and (min-width: 768px) {
+                    flex-grow: 146;
+                }
+
+                p {
+                    align-self: flex-end;
+
+                    @media screen and (min-width: 768px) {
+                        justify-content: flex-end;
+                    }
+
+                    span {
+                        color: var(--yellow-400);
+                    }
                 }
             }
         }
 
         .game-info-settings {
             display: flex;
+
+            @media screen and (min-width: 768px) {
+                @media screen and (min-width: 1200px) {
+                    flex-basis: 0;
+                    flex-grow: 594;
+                }
+            }
         }
     }
 }
