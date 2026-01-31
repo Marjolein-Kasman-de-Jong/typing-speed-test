@@ -439,6 +439,10 @@ section {
                         border-radius: 8px;
                         background-color: var(--neutral-800);
 
+                        overflow: hidden;
+                        max-height: 0;
+                        transition: max-height 3s ease;
+
                         .difficulty-option,
                         .mode-option {
                             position: relative;
@@ -484,6 +488,14 @@ section {
                             }
                         }
                     }
+                }
+
+                details[open] .difficulty-options-wrapper{
+                    max-height: 115px;
+                }
+
+                details[open] .mode-options-wrapper {
+                    max-height: 78px;
                 }
             }
         }
