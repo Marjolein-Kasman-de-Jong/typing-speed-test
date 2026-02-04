@@ -6,6 +6,16 @@ export function toggleDropdown(dropdownButtons) {
     // Toggle when clicking the button
     dropdownButton.addEventListener("click", (e) => {
       e.stopPropagation(); // prevent the document click from firing
+
+      // Close all other dropdown panels
+      dropdownButtons.forEach((btn) => {
+        const otherPanel = btn.nextElementSibling;
+        if (otherPanel !== panel) {
+          otherPanel.classList.add("closed");
+        }
+      });
+
+      // Toggle the current one
       panel.classList.toggle("closed");
     });
 

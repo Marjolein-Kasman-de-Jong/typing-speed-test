@@ -394,6 +394,10 @@ section {
             gap: var(--spacing-125);
 
             @media screen and (min-width: 768px) {
+                width: 84.38%;
+
+                gap: unset;
+
                 @media screen and (min-width: 1200px) {
                     flex-basis: 0;
                     flex-grow: 594;
@@ -414,8 +418,42 @@ section {
                 border: 1px solid var(--neutral-500);
                 border-radius: 8px;
 
+                @media screen and (min-width: 768px) {
+                    /* gap: var(--spacing-100); */
+
+                    border: none;
+                    border-radius: unset;
+                }
+
+                &.difficulty {
+                    @media screen and (min-width: 768px) {
+                        flex-basis: 0;
+                        flex-grow: 314;
+                        gap: var(--spacing-100);
+
+                        padding-right: var(--spacing-200);
+                        border-right: 1px solid var(--neutral-700);
+                    }
+                }
+
+                &.mode {
+                    @media screen and (min-width: 768px) {
+                        flex-basis: 0;
+                        flex-grow: 279;
+                        gap: var(--spacing-75);
+
+                        padding-left: var(--spacing-200);
+                    }
+                }
+
                 p {
                     display: none;
+
+                    @media screen and (min-width: 768px) {
+                        display: unset;
+
+                        color: var(--neutral-400);
+                    }
                 }
 
                 .dropdown-button {
@@ -429,6 +467,10 @@ section {
                     border: none;
                     color: var(--neutral-0);
                     background-color: transparent;
+
+                    @media screen and (min-width: 768px) {
+                        display: none;
+                    }
 
                     .wrapper {
                         display: flex;
@@ -453,8 +495,26 @@ section {
                     opacity: 1;
                     transition: opacity .3s ease-in-out;
 
+                    @media screen and (min-width: 768px) {
+                        position: relative;
+                        top: initial;
+                        left: initial;
+                        transform: unset;
+
+                        padding-left: var(--spacing-75);
+
+                        flex-direction: row;
+                        gap: var(--spacing-75);
+
+                        background-color: transparent;
+                    }
+
                     &.closed {
                         opacity: 0;
+
+                        @media screen and (min-width: 768px) {
+                            opacity: 1;
+                        }
                     }
 
                     .dropdown-option {
@@ -469,8 +529,70 @@ section {
 
                         border-bottom: 1px solid var(--neutral-700);
 
+                        @media screen and (min-width: 768px) {
+                            padding-left: 0;
+
+                            border: 1px solid var(--neutral-500);
+                            border-radius: 8px;
+
+                            transition: border .3s ease-in-out, color .3s ease-in-out;
+                        }
+
+                        &:hover {
+                            @media (hover: hover) and (pointer: fine) {
+                                cursor: pointer;
+                            }
+                        }
+
                         &:last-of-type {
                             border-bottom: none;
+
+                            @media screen and (min-width: 768px) {
+                                border-bottom: 1px solid var(--neutral-500);
+                                ;
+                            }
+                        }
+
+                        &:has(input[name="difficulty"]) {
+                            @media screen and (min-width: 768px) {
+                                flex-basis: 0;
+                            }
+
+                            &:nth-of-type(1) {
+                                @media screen and (min-width: 768px) {
+                                    flex-grow: 55;
+                                }
+                            }
+
+                            &:nth-of-type(2) {
+                                @media screen and (min-width: 768px) {
+                                    flex-grow: 84;
+                                }
+                            }
+
+                            &:nth-of-type(3) {
+                                @media screen and (min-width: 768px) {
+                                    flex-grow: 59;
+                                }
+                            }
+                        }
+
+                        &:has(input[name="mode"]) {
+                            @media screen and (min-width: 768px) {
+                                flex-basis: 0;
+                            }
+
+                            &:nth-of-type(1) {
+                                @media screen and (min-width: 768px) {
+                                    flex-grow: 112;
+                                }
+                            }
+
+                            &:nth-of-type(2) {
+                                @media screen and (min-width: 768px) {
+                                    flex-grow: 84;
+                                }
+                            }
                         }
 
                         &::before {
@@ -487,10 +609,21 @@ section {
                             border: 1px solid var(--neutral-0);
                             border-radius: 50%;
                             transition: border .3s ease-in-out;
+
+                            @media screen and (min-width: 768px) {
+                                display: none;
+                            }
                         }
 
-                        &:has(input:checked)::before {
-                            border: 5px solid var(--blue-400);
+                        &:has(input:checked) {
+                            @media screen and (min-width: 768px) {
+                                border: 1px solid var(--blue-400);
+                                color: var(--blue-400);
+                            }
+                            
+                            &::before {
+                                border: 5px solid var(--blue-400);
+                            }
                         }
 
                         input {
@@ -498,6 +631,23 @@ section {
                             height: 16px;
 
                             opacity: 0;
+
+                            @media screen and (min-width: 768px) {
+                                border: 1px solid red;
+
+                                width: 100%;
+                                height: 100%;
+                            }
+                        }
+
+                        span {
+                            @media screen and (min-width: 768px) {
+                                position: absolute;
+                                top: 50%;
+                                left: 50%;
+                                transform: translate(-50%, -50%);
+                                z-index: 10;
+                            }
                         }
                     }
                 }
