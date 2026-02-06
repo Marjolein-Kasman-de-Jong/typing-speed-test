@@ -21,6 +21,10 @@ function toggleSettingInputs(state, settingInputs, dropdownButtons) {
   });
 
   dropdownButtons.forEach(dropdownButton => {
+    if (!dropdownButton.offsetParent) {
+      return
+    };
+
     if (dropdownButton.offsetParent.classList.contains("difficulty")) {
       updateDropdownButtonText(dropdownButton, difficulty);
     };
@@ -29,7 +33,7 @@ function toggleSettingInputs(state, settingInputs, dropdownButtons) {
       if (mode === "timed") {
         mode = "timed(60s)";
       };
-      
+
       updateDropdownButtonText(dropdownButton, mode);
     };
   });
