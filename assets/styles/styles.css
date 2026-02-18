@@ -511,6 +511,7 @@ section {
                     top: 38px;
                     left: 50%;
                     transform: translateX(-50%);
+                    z-index: 500;
 
                     width: 100%;
 
@@ -539,9 +540,11 @@ section {
 
                     &.closed {
                         opacity: 0;
+                        pointer-events: none;
 
                         @media screen and (min-width: 768px) {
                             opacity: 1;
+                            pointer-events: unset;
                         }
                     }
 
