@@ -20,22 +20,36 @@ function toggleSettingInputs(state, settingInputs, dropdownButtons) {
     };
   });
 
-  dropdownButtons.forEach(dropdownButton => {
-    if (!dropdownButton.offsetParent) {
-      return
-    };
+  // dropdownButtons.forEach(dropdownButton => {
+  //   if (!dropdownButton.offsetParent) {
+  //     return
+  //   };
 
-    if (dropdownButton.offsetParent.classList.contains("difficulty")) {
+  //   if (dropdownButton.offsetParent.classList.contains("difficulty")) {
+  //     updateDropdownButtonText(dropdownButton, difficulty);
+  //   };
+
+  //   if (dropdownButton.offsetParent.classList.contains("mode")) {
+  //     if (mode === "timed") {
+  //       mode = "timed(60s)";
+  //     };
+
+  //     updateDropdownButtonText(dropdownButton, mode);
+  //   };
+  // });
+
+  dropdownButtons.forEach((dropdownButton) => {
+    const dropdown = dropdownButton.closest(".dropdown");
+    if (!dropdown) return;
+
+    if (dropdown.classList.contains("difficulty")) {
       updateDropdownButtonText(dropdownButton, difficulty);
-    };
+    }
 
-    if (dropdownButton.offsetParent.classList.contains("mode")) {
-      if (mode === "timed") {
-        mode = "timed(60s)";
-      };
-
-      updateDropdownButtonText(dropdownButton, mode);
-    };
+    if (dropdown.classList.contains("mode")) {
+      const label = mode === "timed" ? "timed(60s)" : mode;
+      updateDropdownButtonText(dropdownButton, label);
+    }
   });
 };
 
