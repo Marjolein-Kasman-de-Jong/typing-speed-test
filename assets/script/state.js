@@ -23,6 +23,7 @@ function getSettings() {
 async function loadTexts() {
     const url = new URL("../../data/data.json", import.meta.url);
     const res = await fetch(url);
+    
     const data = await res.json();
 
     return data;

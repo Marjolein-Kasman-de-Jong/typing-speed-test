@@ -1,5 +1,16 @@
 function renderTargetText(targetText, targetTextContainer) {
-    targetTextContainer.textContent = targetText;
+    targetTextContainer.innerHTML = "";
+
+    [...targetText].forEach(char => {
+        const span = document.createElement("span");
+        span.textContent = char;
+        targetTextContainer.appendChild(span);
+    });
+};
+
+export function toggleSpanClass(span, status) {
+    span.classList.remove("active", "correct", "incorrect");
+    span.classList.add(status);
 };
 
 export function renderAllGameData(state, targetTextContainer) {
