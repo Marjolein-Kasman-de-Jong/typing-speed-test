@@ -30,6 +30,8 @@ export function startGame(textInputField, targetTextContainer) {
     const spans = targetTextContainer.querySelectorAll("span");
 
     textInputField.focus();
+    textInputField.value = "";
+    
     spans[0].classList.add("active");
 
     textInputField.addEventListener("input", (e) => {
