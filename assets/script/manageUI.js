@@ -21,9 +21,9 @@ function toggleSettingInputs(state, settingInputs, dropdownButtons) {
   });
 
   dropdownButtons.forEach(dropdownButton => {
-    // if (!dropdownButton.offsetParent) {
-    //   return
-    // };
+    if (!dropdownButton.offsetParent) {
+      return
+    };
 
     if (dropdownButton.offsetParent.classList.contains("difficulty")) {
       updateDropdownButtonText(dropdownButton, difficulty);
