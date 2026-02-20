@@ -4,13 +4,10 @@ export const state = {
     text: '',
     currentIndex: 0,
     startTime: null,
+    // elapsedTime: null,
     endTime: null,
+    timerId: null,
     errors: 0
-};
-
-export function setStartTime(value) {
-    state.startTime = value;
-    console.log("startTime changed:", value);
 };
 
 function getCheckedValue(groupName) {
@@ -53,6 +50,8 @@ export async function resetState({mode, difficulty} = {}) {
     state.text = await getText(difficultyToSet);
     state.currentIndex = 0;
     state.startTime = Date.now();
+    // state.elapsedTime = null;
     state.endTime = null;
+    state.timerId = null;
     state.errors = 0;
 };

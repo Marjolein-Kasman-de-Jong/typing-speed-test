@@ -1,0 +1,32 @@
+function formatElapsedTime(ms) {
+  return (ms / 1000).toFixed(1);
+};
+
+export function renderElapsedTime(state, elapsedTimeElement) {
+  if (!state.startTime) {
+    elapsedTimeElement.textContent = "0.0";
+    return;
+  };
+
+  const elapsedMs = Date.now() - state.startTime;
+  elapsedTimeElement.textContent = formatElapsedTime(elapsedMs);
+};
+
+export function stopElapsedTimer(state) {
+  if (state.timerId != null) {
+    clearInterval(state.timerId);
+    state.timerId = null;
+  };
+};
+
+export function startElapsedTimer(state, elapsedTimeElement) {
+  // voorkom dubbele timers
+  stopElapsedTimer(state);
+
+  // meteen iets tonen
+  renderElapsedTime(state, elapsedTimeElement);
+
+  state.timerId = window.setInterval(() => {
+    renderElapsedTime(state, elapsedTimeElement);
+  }, 100); // 10x per seconde is soepel genoeg
+};

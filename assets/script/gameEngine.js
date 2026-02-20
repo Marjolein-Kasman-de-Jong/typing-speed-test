@@ -26,11 +26,25 @@ export function checkUserInput(textInputField, spans) {
     return spanStatuses;
 };
 
-export function startGame(textInputField, spans, setStartTime) {
+export function startGame(state, textInputField, spans, startElapsedTimer, stopElapsedTimer, elapsedTimeElement) {
     textInputField.focus();
     textInputField.value = "";
-    
+
     spans[0].classList.add("active");
 
-    setStartTime(Date.now());
+    stopElapsedTimer(state);
+
+    state.startTime = Date.now();
+    state.endTime = null;
+
+    startElapsedTimer(state, elapsedTimeElement);
+};
+
+export function endGame(state, stopElapsedTimer) {
+    state.endTime = Date.now();
+    stopElapsedTimer(state);
+};
+
+export function stopGame(state, stopElapsedTimer) {
+    stopElapsedTimer(state);
 };

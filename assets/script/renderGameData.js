@@ -19,8 +19,9 @@ export function toggleSpanClass(span, status) {
     span.classList.add(status);
 };
 
-export function renderAllGameData(state, targetTextContainer) {
+export function renderAllGameData(state, targetTextContainer, renderElapsedTime, elapsedTimeElement) {
     const targetText = state.text;
 
     renderTargetText(targetText, targetTextContainer);
+    renderElapsedTime(state, elapsedTimeElement);
 };
