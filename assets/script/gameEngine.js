@@ -26,9 +26,11 @@ export function checkUserInput(textInputField, spans) {
     return spanStatuses;
 };
 
-export function startGame(textInputField, spans) {
+export function startGame(textInputField, spans, setStartTime) {
     textInputField.focus();
     textInputField.value = "";
     
     spans[0].classList.add("active");
+
+    setStartTime(Date.now());
 };

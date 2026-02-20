@@ -1,5 +1,5 @@
 import { resetUI, toggleDropdown } from "./manageUI.js";
-import { state, resetState } from './state.js';
+import { state, resetState, setStartTime } from './state.js';
 import { renderAllGameData, toggleSpanClass, clearAllSpans } from "./renderGameData.js";
 import { getItem, setItem } from "./manageLocalStorage.js";
 import { startGame, checkUserInput } from "./gameEngine.js";
@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     // Start game
     startButton.addEventListener("click", () => {
         const spans = getSpans();
-        startGame(textInputField, spans);
+        startGame(textInputField, spans, setStartTime);
     });
 
     // Play game
@@ -40,7 +40,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
         resetUI(state, settingInputs, dropdownButtons);
         clearAllSpans(spans);
-        startGame(textInputField, spans);
+        startGame(textInputField, spans, setStartTime);
     });
 
     // UI components

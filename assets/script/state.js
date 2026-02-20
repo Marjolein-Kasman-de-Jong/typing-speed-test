@@ -8,6 +8,11 @@ export const state = {
     errors: 0
 };
 
+export function setStartTime(value) {
+    state.startTime = value;
+    console.log("startTime changed:", value);
+};
+
 function getCheckedValue(groupName) {
     const checked = document.querySelector(`input[name="${groupName}"]:checked`);
     return checked ? checked.value : null;
@@ -47,7 +52,7 @@ export async function resetState({mode, difficulty} = {}) {
     state.mode = modeToSet;
     state.text = await getText(difficultyToSet);
     state.currentIndex = 0;
-    state.startTime = null;
+    state.startTime = Date.now();
     state.endTime = null;
     state.errors = 0;
 };
