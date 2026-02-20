@@ -8,6 +8,12 @@ function renderTargetText(targetText, targetTextContainer) {
     });
 };
 
+export function clearAllSpans(spans) {
+    spans.forEach(span => {
+        span.classList.remove("active", "correct", "incorrect");
+    });
+};
+
 export function toggleSpanClass(span, status) {
     span.classList.remove("active", "correct", "incorrect");
     span.classList.add(status);

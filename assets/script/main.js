@@ -1,6 +1,6 @@
 import { resetUI, toggleDropdown } from "./manageUI.js";
 import { state, resetState } from './state.js';
-import { renderAllGameData, toggleSpanClass } from "./renderGameData.js";
+import { renderAllGameData, toggleSpanClass, clearAllSpans } from "./renderGameData.js";
 import { getItem, setItem } from "./manageLocalStorage.js";
 import { startGame, checkUserInput } from "./gameEngine.js";
 
@@ -12,16 +12,9 @@ document.addEventListener("DOMContentLoaded", async () => {
     const targetTextContainer = document.getElementById("target-text");
     const startButton = document.getElementById("start-button");
     const textInputField = document.getElementById("typing-input");
+    const restartButton = document.getElementById("restart-button");
     
     const getSpans = () => targetTextContainer.querySelectorAll("span");
-
-    settingInputs.forEach(settingInput => {
-        settingInput.addEventListener("click", async () => {
-            await resetState();
-            renderAllGameData(state, targetTextContainer);
-            setItem(state);
-        });
-    });
 
     // Start game
     startButton.addEventListener("click", () => {
@@ -41,7 +34,24 @@ document.addEventListener("DOMContentLoaded", async () => {
         });
     });
 
+    // Restart game
+    restartButton.addEventListener("click", () => {
+        const spans = getSpans();
+
+        resetUI(state, settingInputs, dropdownButtons);
+        clearAllSpans(spans);
+        startGame(textInputField, spans);
+    });
+
     // UI components
+    settingInputs.forEach(settingInput => {
+        settingInput.addEventListener("click", async () => {
+            await resetState();
+            renderAllGameData(state, targetTextContainer);
+            setItem(state);
+        });
+    });
+
     toggleDropdown(dropdownButtons);
 
     // Initial
