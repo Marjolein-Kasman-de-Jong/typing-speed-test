@@ -1,8 +1,6 @@
-import { state } from './state.js';
-import { toggleSpanClass } from './renderGameData.js';
-
-function checkUserInput(textInputField, spans) {
+export function checkUserInput(textInputField, spans) {
     const userInput = textInputField.value;
+    const spanStatuses = [];
 
     spans.forEach((span, i) => {
         const typed = userInput[i];
@@ -12,7 +10,7 @@ function checkUserInput(textInputField, spans) {
             status = "correct";
         } else {
             if (typed === undefined) {
-                if (i === userInput.length) {
+                if (i === textInputField.length) {
                     status = "active";
                 } else {
                     return;
@@ -22,19 +20,15 @@ function checkUserInput(textInputField, spans) {
             };
         };
 
-        toggleSpanClass(span, status);
+        spanStatuses.push([span, status]);
     });
+
+    return spanStatuses;
 };
 
-export function startGame(textInputField, targetTextContainer) {
-    const spans = targetTextContainer.querySelectorAll("span");
-
+export function startGame(textInputField, spans) {
     textInputField.focus();
     textInputField.value = "";
     
     spans[0].classList.add("active");
-
-    textInputField.addEventListener("input", (e) => {
-        checkUserInput(textInputField, spans);
-    });
 };
