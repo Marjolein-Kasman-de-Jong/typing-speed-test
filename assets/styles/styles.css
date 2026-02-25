@@ -427,6 +427,7 @@ section {
                     }
 
                     span {
+                        width: 60px;
                         color: var(--yellow-400);
                     }
                 }

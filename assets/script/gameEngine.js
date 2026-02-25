@@ -10,7 +10,7 @@ export function checkUserInput(textInputField, spans) {
             status = "correct";
         } else {
             if (typed === undefined) {
-                if (i === textInputField.length) {
+                if (i === userInput.length) {
                     status = "active";
                 } else {
                     return;
