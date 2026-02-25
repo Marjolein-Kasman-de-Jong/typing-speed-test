@@ -1,5 +1,5 @@
-function formatElapsedTime(ms) {
-  const totalSeconds = Math.floor(ms / 1000);
+function formatElapsedTime(state, ms) {
+  const totalSeconds = state.mode === "timed" ? 60 - Math.floor(ms / 1000) : Math.floor(ms / 1000);
   const minutes = Math.floor(totalSeconds / 60);
   const seconds = totalSeconds % 60;
 
@@ -13,7 +13,7 @@ export function renderElapsedTime(state, elapsedTimeElement) {
   };
 
   const elapsedMs = Date.now() - state.startTime;
-  elapsedTimeElement.textContent = formatElapsedTime(elapsedMs);
+  elapsedTimeElement.textContent = formatElapsedTime(state, elapsedMs);
 };
 
 export function stopElapsedTimer(state) {
