@@ -1,10 +1,14 @@
 function formatElapsedTime(ms) {
-  return (ms / 1000).toFixed(1);
+  const totalSeconds = Math.floor(ms / 1000);
+  const minutes = Math.floor(totalSeconds / 60);
+  const seconds = totalSeconds % 60;
+
+  return `${minutes}:${String(seconds).padStart(2, "0")}`;
 };
 
 export function renderElapsedTime(state, elapsedTimeElement) {
   if (!state.startTime) {
-    elapsedTimeElement.textContent = "0.0";
+    elapsedTimeElement.textContent = "0.00";
     return;
   };
 
